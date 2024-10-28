@@ -1,5 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { say, IOptions } from 'cowsay'
+import { readFile } from "fs/promises"
+
+
 
 // Simulated GPT API call
 const getGPTResponse = async () => {
@@ -14,10 +17,19 @@ const getGPTResponse = async () => {
     return responses[Math.floor(Math.random() * responses.length)]
 }
 
+const readCowOfTheDay = async () => {
+    // read from the file in ./data/cow-of-the-day.txt and return the content
+
+    const filePath = process.cwd() + '/data/cow-of-the-day.txt'
+    const fileContent = await readFile(filePath, 'utf8')
+    return fileContent
+}
+
+
 export default async function DailyCow() {
 
     const cowOptions: IOptions = {
-        text: await getGPTResponse(),
+        text: await readCowOfTheDay(),
         f: "charizardvice",
         p: true
     }
