@@ -1,5 +1,4 @@
 import DailyCow from "@/components/daily-cow";
-import Image from "next/image";
 
 // export const dynamic = "force-dynamic"
 
