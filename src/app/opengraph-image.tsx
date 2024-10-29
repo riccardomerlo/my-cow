@@ -3,7 +3,6 @@ import { ImageResponse } from 'next/og'
 import * as cowsay from 'cowsay'
 import { getGPTResponseFromAPI } from '@/lib/data'
 
-
 export const runtime = 'edge'
 
 export const alt = 'About Acme'
@@ -24,6 +23,7 @@ export default async function Image() {
     }
 
     const cow = cowsay.say(cowOptions)
+
 
     // const geistMono = fetch(
     //     new URL('./fonts/GeistMonoVF.woff', import.meta.url)
@@ -51,8 +51,7 @@ export default async function Image() {
             </div >
         ),
         {
-            ...size,
-
+            ...size
         }
     )
 }

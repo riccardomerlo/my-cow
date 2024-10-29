@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getGPTResponseFromAPI } from "@/lib/data"
 import * as cowsay from 'cowsay'
 import { readFile } from "fs/promises"
+import MoveCow from "./move-cow"
 
 
 
@@ -24,15 +25,18 @@ export default async function DailyCow() {
 
     const cow = cowsay.say(cowOptions)
 
+    // console.log(cow)
+
     return (
         <Card className="w-full max-w-3xl mx-auto mt-8 flex flex-col items-center justify-center gap-4">
             <CardHeader>
-                <CardTitle className="text-2xl font-bold text-center">Cow of the Day</CardTitle>
+                <CardTitle className="text-2xl font-bold text-center">Mucca of the día</CardTitle>
             </CardHeader>
             <CardContent>
-                <pre className="font-mono text-sm whitespace-pre-wrap">
+                {/* <pre className="font-mono text-sm whitespace-pre-wrap">
                     {cow}
-                </pre>
+                </pre> */}
+                <MoveCow cow={cow}></MoveCow>
             </CardContent>
         </Card>
     )
