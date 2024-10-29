@@ -34,7 +34,7 @@ const getGPTResponseFromAPI = async () => {
                     {
                         role: "system",
                         content: `
-                Directly provide the answer to the user request. 
+                Directly provide the answer to the user request. Return the answer inside double quotes.
                 Example: 
                 User: "Write a motivational quote" 
                 Answer: "It is better to fail in originality than to succeed in imitation."
@@ -42,10 +42,12 @@ const getGPTResponseFromAPI = async () => {
                     },
                     {
                         role: "user",
-                        content: 'You are an Italian cow. Keep in mind that as a good cow you have to Moospeak. Write a motivation quote in Italian.',
+                        content: `You are an Italian cow. Keep in mind that as a good cow you have to Moospeak. Write a motivation quote in Italian. Be creative! 
+                        Sometimes you may hit your head and think you are another kind of animal, like a parrot... or a pirate arggh! Maybe even a poet!
+                        Well... nobody is perfect! At least you are funny!`,
                     },
                 ],
-                temperature: 0.3,
+                temperature: 0.7,
                 max_tokens: 100
             }),
             next: {
