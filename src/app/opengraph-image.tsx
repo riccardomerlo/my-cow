@@ -25,10 +25,9 @@ export default async function Image() {
     const cow = cowsay.say(cowOptions)
 
 
-    // const geistMono = fetch(
-    //     new URL('./fonts/GeistMonoVF.woff', import.meta.url)
-    // ).then((res) => res.arrayBuffer())
-
+    const geistMono = fetch(
+        new URL('./fonts/IBMPlexMono-Regular.ttf', import.meta.url)
+    ).then((res) => res.arrayBuffer())
 
     return new ImageResponse(
         (
@@ -41,7 +40,6 @@ export default async function Image() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontFamily: 'monospace',
                     whiteSpace: 'pre-wrap',
                 }}
             >
@@ -51,7 +49,15 @@ export default async function Image() {
             </div >
         ),
         {
-            ...size
+            ...size,
+            fonts: [
+                {
+                    name: 'Plex',
+                    data: await geistMono,
+                    style: 'normal',
+                    weight: 400,
+                },
+            ],
         }
     )
 }

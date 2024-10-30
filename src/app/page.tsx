@@ -9,3 +9,16 @@ export default function Home() {
     </div>
   );
 }
+
+export const metadata = {
+  metadataBase: new URL(process.env.URL ?? 'http://localhost:3000'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Mucca',
+    description: 'Mucca of the día',
+    url: process.env.URL ?? 'http://localhost:3000',
+    siteName: 'Mucca'
+  },
+}
