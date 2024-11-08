@@ -13,10 +13,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
 export const metadata: Metadata = {
   title: "Mucca of the día",
   description: "Get moo-tivated!",
-  metadataBase: new URL("https://my-cow.vercel.app"),
+  metadataBase: new URL(siteUrl),
 };
 
 export default function RootLayout({
