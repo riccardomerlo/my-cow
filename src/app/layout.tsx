@@ -16,6 +16,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Mucca of the día",
   description: "Get moo-tivated!",
+  metadataBase: new URL("https://my-cow.vercel.app"),
 };
 
 export default function RootLayout({
